@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Collective Dynamics of Living Systems — Workshop 2027</title>
+<title>Collective Dynamics of Living Systems — Workshop 2026</title>
 <meta name="description" content="An interdisciplinary workshop on emergence, self-organization, and collective behavior across scales of life.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +69,7 @@
   html, body{width:100%; overflow-x:hidden;}
   .hero{
     position:relative; height:100vh; min-height:640px;
-    width:100vw;
+    width:100vw; max-width:none;
     left:50%; right:50%;
     margin-left:-50vw; margin-right:-50vw;
     overflow:hidden;
@@ -89,7 +89,7 @@
     max-width:820px;
   }
   .eyebrow{
-    font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.14em;
+    font-family:'IBM Plex Mono',monospace; font-size:0.95rem; letter-spacing:0.14em;
     color:var(--bio-cyan); text-transform:uppercase; margin-bottom:20px;
     display:inline-block; border:1px solid rgba(94,234,212,0.35); padding:6px 14px; border-radius:999px;
   }
@@ -103,7 +103,7 @@
     font-weight:400;
   }
   .hero-meta{
-    font-family:'IBM Plex Mono',monospace; font-size:0.85rem; color:#9FE1CB;
+    font-family:'IBM Plex Mono',monospace; font-size:1.05rem; color:#9FE1CB;
     margin-bottom:36px; letter-spacing:0.02em;
   }
   .hero-meta span{color:#EDEEF3;}
@@ -122,9 +122,15 @@
     z-index:2; color:#8891A6; font-size:0.7rem; font-family:'IBM Plex Mono',monospace;
     letter-spacing:0.12em; text-transform:uppercase; opacity:0.75;
   }
+  .regime-tag{
+    position:absolute; bottom:28px; left:32px; z-index:2;
+    color:#8891A6; font-size:0.7rem; font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.12em; text-transform:uppercase;
+    opacity:0.85; transition:opacity .5s ease;
+  }
 
   /* ---------- generic section ---------- */
-  section{padding:100px 24px; max-width:1080px; margin:0 auto;}
+  section:not(.hero){padding:100px 24px; max-width:1080px; margin:0 auto;}
   .section-head{max-width:640px; margin-bottom:56px;}
   .section-tag{
     font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.14em;
@@ -278,7 +284,7 @@
 <body>
 
 <nav id="nav">
-  <div class="nav-logo">CDLS · 2027</div>
+  <div class="nav-logo">CDLS · 2026</div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#themes">Themes</a></li>
@@ -293,16 +299,17 @@
   <canvas id="flock"></canvas>
   <div class="hero-grain"></div>
   <div class="hero-content">
-    <span class="eyebrow">Interdisciplinary workshop</span>
+    <span class="eyebrow">IIT Kharagpur Platinum Jubilee workshop</span>
     <h1>Collective Dynamics<br>of <em>Living Systems</em></h1>
-    <p class="sub">From flocking birds to firing neurons — how simple local rules give rise to emergent, adaptive behavior across scales of life.</p>
-    <p class="hero-meta">📍 <span>[Venue Name], [City]</span> &nbsp;·&nbsp; 🗓 <span>March 16–18, 2027</span></p>
+    <p class="sub">From cytoskeletal filaments to tissue morphing, flocking, and disease spread — collective dynamics across scales of life.</p>
+    <p class="hero-meta">📍 <span>IIT Kharagpur, Kharagpur</span> &nbsp;·&nbsp; 🗓 <span>November 27–29, 2026</span></p>
     <div class="cta-row">
       <a href="#register" class="btn btn-primary">Register now</a>
       <a href="#register" class="btn btn-ghost">Submit an abstract</a>
     </div>
   </div>
-  <div class="scroll-cue">Move your cursor — the flock reacts ↓</div>
+  <div class="scroll-cue">Move your cursor — the cells react ↓</div>
+  <div class="regime-tag" id="regimeTag">Swarming dynamics</div>
 </section>
 
 <section id="about" class="field-notes">
@@ -471,9 +478,9 @@
     <p>Times are placeholders — a full timetable with room assignments will be posted closer to the workshop.</p>
   </div>
   <div class="day-tabs">
-    <button class="day-tab active" data-day="1">Day 1 · Mar 16</button>
-    <button class="day-tab" data-day="2">Day 2 · Mar 17</button>
-    <button class="day-tab" data-day="3">Day 3 · Mar 18</button>
+    <button class="day-tab active" data-day="1">Day 1 · Nov 27</button>
+    <button class="day-tab" data-day="2">Day 2 · Nov 28</button>
+    <button class="day-tab" data-day="3">Day 3 · Nov 29</button>
   </div>
 
   <div class="schedule-list active" data-day="1">
@@ -585,11 +592,11 @@
     <div class="venue-map">Map embed placeholder<br>— add your venue's map here —</div>
     <dl class="venue-details">
       <dt>Venue</dt>
-      <dd>[Venue Name], [Street Address], [City]</dd>
+      <dd>IIT Kharagpur, Kharagpur, West Bengal, India</dd>
       <dt>Nearest airport</dt>
       <dd>[Airport code] — approx. [XX] min by [taxi / shuttle / transit]</dd>
       <dt>Accommodation</dt>
-      <dd>A block of rooms is held at [Hotel Name] until [date]. Mention "CDLS 2027" when booking.</dd>
+      <dd>A block of rooms is held at [Hotel Name] until [date]. Mention "CDLS 2026" when booking.</dd>
       <dt>Accessibility</dt>
       <dd>The venue is step-free throughout; contact the organizers for specific accommodation requests.</dd>
     </dl>
@@ -607,11 +614,11 @@
       </div>
     </div>
     <ul class="key-dates">
-      <li><span class="kd-label">Abstract submission opens</span><span class="kd-date">Nov 1, 2026</span></li>
-      <li><span class="kd-label">Abstract deadline</span><span class="kd-date">Jan 15, 2027</span></li>
-      <li><span class="kd-label">Notification of acceptance</span><span class="kd-date">Feb 1, 2027</span></li>
-      <li><span class="kd-label">Early registration closes</span><span class="kd-date">Feb 15, 2027</span></li>
-      <li><span class="kd-label">Workshop dates</span><span class="kd-date">Mar 16–18, 2027</span></li>
+      <li><span class="kd-label">Abstract submission opens</span><span class="kd-date">Jul 1, 2026</span></li>
+      <li><span class="kd-label">Abstract deadline</span><span class="kd-date">Sep 15, 2026</span></li>
+      <li><span class="kd-label">Notification of acceptance</span><span class="kd-date">Oct 1, 2026</span></li>
+      <li><span class="kd-label">Early registration closes</span><span class="kd-date">Oct 20, 2026</span></li>
+      <li><span class="kd-label">Workshop dates</span><span class="kd-date">Nov 27–29, 2026</span></li>
     </ul>
   </div>
 </section>
@@ -649,9 +656,10 @@
     <a href="#">Twitter / X</a>
     <a href="#">Mastodon</a>
   </div>
-  <p style="margin-top:20px; font-size:0.75rem; color:#5B6472;">© 2027 CDLS Workshop. Site content is a placeholder template — edit freely.</p>
+  <p style="margin-top:20px; font-size:0.75rem; color:#5B6472;">© 2026 CDLS Workshop. Site content is a placeholder template — edit freely.</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/d3-delaunay@6"></script>
 <script>
   // nav solid-on-scroll
   const nav = document.getElementById('nav');
@@ -671,10 +679,11 @@
     });
   });
 
-  // ---- flocking simulation (boids) ----
+  // ---- two collective-dynamics regimes, alternating ----
   const canvas = document.getElementById('flock');
   const ctx = canvas.getContext('2d');
   const heroEl = document.querySelector('.hero');
+  const regimeTag = document.getElementById('regimeTag');
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   let W, H;
@@ -685,17 +694,6 @@
   resize();
   window.addEventListener('resize', resize);
 
-  const NUM_BOIDS = 130;
-  const boids = [];
-  for (let i = 0; i < NUM_BOIDS; i++) {
-    boids.push({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 1.5,
-      vy: (Math.random() - 0.5) * 1.5
-    });
-  }
-
   let mouse = { x: -9999, y: -9999, active: false };
   heroEl.addEventListener('mousemove', e => {
     const rect = heroEl.getBoundingClientRect();
@@ -705,96 +703,235 @@
   });
   heroEl.addEventListener('mouseleave', () => { mouse.active = false; });
 
-  const PERCEPTION = 55;
-  const SEPARATION_DIST = 22;
-  const MAX_SPEED = 2.4;
-  const MOUSE_RADIUS = 110;
-
-  function step() {
-    for (const b of boids) {
-      let alignX = 0, alignY = 0, cohX = 0, cohY = 0, sepX = 0, sepY = 0, count = 0;
-
-      for (const other of boids) {
-        if (other === b) continue;
-        const dx = other.x - b.x, dy = other.y - b.y;
-        const d2 = dx * dx + dy * dy;
-        if (d2 < PERCEPTION * PERCEPTION) {
-          alignX += other.vx; alignY += other.vy;
-          cohX += other.x; cohY += other.y;
-          count++;
-          if (d2 < SEPARATION_DIST * SEPARATION_DIST && d2 > 0.001) {
-            sepX -= dx / d2; sepY -= dy / d2;
+  // ---- regime 1: particle-based flocking (original boid triangles) ----
+  const particles = {
+    label: 'Particle flocking',
+    cells: [],
+    init() {
+      this.cells = [];
+      const n = 220;
+      for (let i = 0; i < n; i++) {
+        this.cells.push({
+          x: Math.random() * W, y: Math.random() * H,
+          vx: (Math.random() - 0.5) * 2.25, vy: (Math.random() - 0.5) * 2.25
+        });
+      }
+    },
+    step() {
+      const PERCEPTION = 65, SEPARATION_DIST = 22, MAX_SPEED = 3.6, MOUSE_RADIUS = 110;
+      const cells = this.cells;
+      for (const b of cells) {
+        let alignX = 0, alignY = 0, cohX = 0, cohY = 0, sepX = 0, sepY = 0, count = 0;
+        for (const other of cells) {
+          if (other === b) continue;
+          const dx = other.x - b.x, dy = other.y - b.y;
+          const d2 = dx * dx + dy * dy;
+          if (d2 < PERCEPTION * PERCEPTION) {
+            alignX += other.vx; alignY += other.vy;
+            cohX += other.x; cohY += other.y;
+            count++;
+            if (d2 < SEPARATION_DIST * SEPARATION_DIST && d2 > 0.001) {
+              sepX -= dx / d2; sepY -= dy / d2;
+            }
           }
         }
+        if (count > 0) {
+          alignX /= count; alignY /= count;
+          cohX = (cohX / count) - b.x; cohY = (cohY / count) - b.y;
+          b.vx += alignX * 0.035 + cohX * 0.001 + sepX * 0.9;
+          b.vy += alignY * 0.035 + cohY * 0.001 + sepY * 0.9;
+        }
+        if (mouse.active) {
+          const dx = b.x - mouse.x, dy = b.y - mouse.y;
+          const d2 = dx * dx + dy * dy;
+          if (d2 < MOUSE_RADIUS * MOUSE_RADIUS && d2 > 0.001) {
+            const f = (MOUSE_RADIUS * MOUSE_RADIUS - d2) / (MOUSE_RADIUS * MOUSE_RADIUS);
+            b.vx += (dx / Math.sqrt(d2)) * f * 0.9;
+            b.vy += (dy / Math.sqrt(d2)) * f * 0.9;
+          }
+        }
+        const margin = 40;
+        if (b.x < margin) b.vx += 0.06;
+        if (b.x > W - margin) b.vx -= 0.06;
+        if (b.y < margin) b.vy += 0.06;
+        if (b.y > H - margin) b.vy -= 0.06;
+        const speed = Math.hypot(b.vx, b.vy);
+        if (speed > MAX_SPEED) { b.vx = (b.vx / speed) * MAX_SPEED; b.vy = (b.vy / speed) * MAX_SPEED; }
+        if (speed < 0.9) { b.vx = (b.vx / (speed || 1)) * 0.9; b.vy = (b.vy / (speed || 1)) * 0.9; }
+        b.x += b.vx; b.y += b.vy;
+        if (b.x < 0) b.x = W; if (b.x > W) b.x = 0;
+        if (b.y < 0) b.y = H; if (b.y > H) b.y = 0;
       }
-
-      if (count > 0) {
-        alignX /= count; alignY /= count;
-        cohX = (cohX / count) - b.x; cohY = (cohY / count) - b.y;
-        b.vx += alignX * 0.02 + cohX * 0.0006 + sepX * 0.9;
-        b.vy += alignY * 0.02 + cohY * 0.0006 + sepY * 0.9;
+    },
+    render() {
+      ctx.fillStyle = 'rgba(10, 15, 31, 0.28)';
+      ctx.fillRect(0, 0, W, H);
+      ctx.globalCompositeOperation = 'lighter';
+      for (const b of this.cells) {
+        const angle = Math.atan2(b.vy, b.vx);
+        const len = 6;
+        ctx.beginPath();
+        ctx.moveTo(b.x + Math.cos(angle) * len, b.y + Math.sin(angle) * len);
+        ctx.lineTo(b.x + Math.cos(angle + 2.5) * 3, b.y + Math.sin(angle + 2.5) * 3);
+        ctx.lineTo(b.x + Math.cos(angle - 2.5) * 3, b.y + Math.sin(angle - 2.5) * 3);
+        ctx.closePath();
+        ctx.fillStyle = 'rgba(94, 234, 212, 0.55)';
+        ctx.fill();
       }
+      ctx.globalCompositeOperation = 'source-over';
+    }
+  };
 
-      if (mouse.active) {
-        const dx = b.x - mouse.x, dy = b.y - mouse.y;
-        const d2 = dx * dx + dy * dy;
-        if (d2 < MOUSE_RADIUS * MOUSE_RADIUS && d2 > 0.001) {
-          const f = (MOUSE_RADIUS * MOUSE_RADIUS - d2) / (MOUSE_RADIUS * MOUSE_RADIUS);
-          b.vx += (dx / Math.sqrt(d2)) * f * 0.9;
-          b.vy += (dy / Math.sqrt(d2)) * f * 0.9;
+  const MAX_CELL_RADIUS = 42;
+  const CORNER_ROUNDING = 10;
+
+  // trace a polygon path with each corner smoothed into a curve, so cell
+  // boundaries read as rounded membranes rather than sharp polygon edges
+  function traceRoundedPolygon(ctx, pts, radius) {
+    const n = pts.length;
+    if (n < 3) return;
+    for (let i = 0; i < n; i++) {
+      const curr = pts[i];
+      const prev = pts[(i - 1 + n) % n];
+      const next = pts[(i + 1) % n];
+      const distPrev = Math.hypot(curr[0] - prev[0], curr[1] - prev[1]) || 1;
+      const distNext = Math.hypot(next[0] - curr[0], next[1] - curr[1]) || 1;
+      const rPrev = Math.min(radius, distPrev / 2);
+      const rNext = Math.min(radius, distNext / 2);
+      const startX = curr[0] + (prev[0] - curr[0]) / distPrev * rPrev;
+      const startY = curr[1] + (prev[1] - curr[1]) / distPrev * rPrev;
+      const endX = curr[0] + (next[0] - curr[0]) / distNext * rNext;
+      const endY = curr[1] + (next[1] - curr[1]) / distNext * rNext;
+      if (i === 0) ctx.moveTo(startX, startY); else ctx.lineTo(startX, startY);
+      ctx.quadraticCurveTo(curr[0], curr[1], endX, endY);
+    }
+    ctx.closePath();
+  }
+
+  // ---- regime 2: collective sheet flow (spring-spaced columns drifting right) ----
+  const sheet = {
+    label: 'Collective sheet flow',
+    cells: [],
+    init() {
+      this.cells = [];
+      const REST_LENGTH = 46;
+      const cols = Math.ceil(W / REST_LENGTH) + 4;
+      const rows = Math.ceil(H / REST_LENGTH) + 2;
+      for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+          this.cells.push({
+            x: (c - 2) * REST_LENGTH + (Math.random() - 0.5) * 8,
+            y: r * REST_LENGTH + (Math.random() - 0.5) * 8,
+            vx: 0.55, vy: 0, hidden: false
+          });
         }
       }
-
-      const margin = 40;
-      if (b.x < margin) b.vx += 0.06;
-      if (b.x > W - margin) b.vx -= 0.06;
-      if (b.y < margin) b.vy += 0.06;
-      if (b.y > H - margin) b.vy -= 0.06;
-
-      const speed = Math.hypot(b.vx, b.vy);
-      if (speed > MAX_SPEED) { b.vx = (b.vx / speed) * MAX_SPEED; b.vy = (b.vy / speed) * MAX_SPEED; }
-      if (speed < 0.6) { b.vx = (b.vx / (speed || 1)) * 0.6; b.vy = (b.vy / (speed || 1)) * 0.6; }
-
-      b.x += b.vx; b.y += b.vy;
-      if (b.x < 0) b.x = W; if (b.x > W) b.x = 0;
-      if (b.y < 0) b.y = H; if (b.y > H) b.y = 0;
+    },
+    step() {
+      const REST_LENGTH = 46, SPRING_K = 0.05, DRIFT_VX = 0.55, JITTER = 0.05, DAMPING = 0.85;
+      const MOUSE_RADIUS = 90, NEIGHBOR_SEARCH = REST_LENGTH * 1.8;
+      const cells = this.cells;
+      const points = cells.map(c => [c.x, c.y]);
+      const delaunay = d3.Delaunay.from(points);
+      for (let i = 0; i < cells.length; i++) {
+        const c = cells[i];
+        let fx = 0, fy = 0;
+        for (const j of delaunay.neighbors(i)) {
+          const o = cells[j];
+          const dx = o.x - c.x, dy = o.y - c.y;
+          const dist = Math.hypot(dx, dy) || 0.001;
+          if (dist < NEIGHBOR_SEARCH) {
+            const push = SPRING_K * (dist - REST_LENGTH) / dist;
+            fx += dx * push;
+            fy += dy * push;
+          }
+        }
+        if (mouse.active) {
+          const dx = c.x - mouse.x, dy = c.y - mouse.y;
+          const d2 = dx * dx + dy * dy;
+          if (d2 < MOUSE_RADIUS * MOUSE_RADIUS && d2 > 0.001) {
+            const f = (MOUSE_RADIUS * MOUSE_RADIUS - d2) / (MOUSE_RADIUS * MOUSE_RADIUS);
+            fx += (dx / Math.sqrt(d2)) * f * 1.4;
+            fy += (dy / Math.sqrt(d2)) * f * 1.4;
+          }
+        }
+        c.vx = c.vx * DAMPING + (fx + DRIFT_VX) * (1 - DAMPING) + (Math.random() - 0.5) * JITTER;
+        c.vy = c.vy * DAMPING + fy * (1 - DAMPING) + (Math.random() - 0.5) * JITTER;
+        c.x += c.vx;
+        c.y += c.vy;
+        if (c.x > W + REST_LENGTH) { c.x = -REST_LENGTH * 2; c.y = Math.random() * H; }
+        if (c.y < -REST_LENGTH) c.y = H + REST_LENGTH;
+        if (c.y > H + REST_LENGTH) c.y = -REST_LENGTH;
+        c.hidden = (c.x < -REST_LENGTH || c.x > W + REST_LENGTH);
+      }
+    },
+    render() {
+      ctx.clearRect(0, 0, W, H);
+      const points = this.cells.map(c => [c.x, c.y]);
+      const delaunay = d3.Delaunay.from(points);
+      const voronoi = delaunay.voronoi([0, 0, W, H]);
+      for (let i = 0; i < this.cells.length; i++) {
+        const c = this.cells[i];
+        if (c.hidden) continue;
+        const poly = voronoi.cellPolygon(i);
+        if (!poly) continue;
+        const clamped = poly.map(([px, py]) => {
+          const dx = px - c.x, dy = py - c.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist <= MAX_CELL_RADIUS || dist === 0) return [px, py];
+          const scale = MAX_CELL_RADIUS / dist;
+          return [c.x + dx * scale, c.y + dy * scale];
+        });
+        ctx.beginPath();
+        traceRoundedPolygon(ctx, clamped, CORNER_ROUNDING);
+        ctx.fillStyle = 'rgba(94, 234, 212, 0.22)';
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(231, 236, 245, 0.16)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+      ctx.fillStyle = 'rgba(231, 236, 245, 0.75)';
+      for (const c of this.cells) {
+        if (c.hidden) continue;
+        ctx.beginPath();
+        ctx.arc(c.x, c.y, 1.6, 0, Math.PI * 2);
+        ctx.fill();
+      }
     }
+  };
+
+  const regimes = [particles, sheet];
+  let regimeIndex = 0;
+  let current = regimes[regimeIndex];
+  current.init();
+
+  const REGIME_DURATION = 10000;
+  let regimeStart = performance.now();
+
+  function switchRegime() {
+    regimeIndex = (regimeIndex + 1) % regimes.length;
+    current = regimes[regimeIndex];
+    current.init();
+    ctx.clearRect(0, 0, W, H);
+    regimeTag.style.opacity = 0;
+    setTimeout(() => {
+      regimeTag.textContent = current.label;
+      regimeTag.style.opacity = 0.85;
+    }, 300);
   }
 
-  function draw() {
-    ctx.fillStyle = 'rgba(10, 15, 31, 0.28)';
-    ctx.fillRect(0, 0, W, H);
-
-    ctx.globalCompositeOperation = 'lighter';
-    for (const b of boids) {
-      const angle = Math.atan2(b.vy, b.vx);
-      const len = 6;
-      ctx.beginPath();
-      ctx.moveTo(b.x + Math.cos(angle) * len, b.y + Math.sin(angle) * len);
-      ctx.lineTo(b.x + Math.cos(angle + 2.5) * 3, b.y + Math.sin(angle + 2.5) * 3);
-      ctx.lineTo(b.x + Math.cos(angle - 2.5) * 3, b.y + Math.sin(angle - 2.5) * 3);
-      ctx.closePath();
-      ctx.fillStyle = 'rgba(94, 234, 212, 0.55)';
-      ctx.fill();
+  function frame(now) {
+    if (!prefersReducedMotion && now - regimeStart > REGIME_DURATION) {
+      regimeStart = now;
+      switchRegime();
     }
-    ctx.globalCompositeOperation = 'source-over';
+    current.step();
+    current.render();
+    requestAnimationFrame(frame);
   }
 
-  function loop() {
-    step();
-    draw();
-    requestAnimationFrame(loop);
-  }
-
-  // initial paint so canvas isn't blank
-  ctx.fillStyle = 'rgba(10, 15, 31, 1)';
-  ctx.fillRect(0, 0, W, H);
-
-  if (!prefersReducedMotion) {
-    requestAnimationFrame(loop);
-  } else {
-    draw();
-  }
+  regimeTag.textContent = current.label;
+  requestAnimationFrame(frame);
 </script>
 
 </body>
