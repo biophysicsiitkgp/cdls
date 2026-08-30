@@ -66,8 +66,12 @@
   .nav-toggle{display:none;}
 
   /* ---------- hero ---------- */
+  html, body{width:100%; overflow-x:hidden;}
   .hero{
     position:relative; height:100vh; min-height:640px;
+    width:100vw;
+    left:50%; right:50%;
+    margin-left:-50vw; margin-right:-50vw;
     overflow:hidden;
     background:linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 55%, var(--sky-horizon) 88%, #6B4A4F 100%);
     display:flex; align-items:center; justify-content:center;
