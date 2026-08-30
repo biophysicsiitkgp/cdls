@@ -248,8 +248,9 @@
   .reg-actions{margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;}
 
   /* ---------- committee ---------- */
-  .committee-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  .committee-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:24px;}
   .committee-card{text-align:left;}
+  .committee-role{font-size:0.82rem; color:#0F6E56; font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em; margin:2px 0;}
   .committee-name{font-family:'Fraunces',serif; font-weight:600; font-size:0.98rem;}
   .committee-affil{font-size:0.82rem; color:var(--muted);}
 
@@ -305,7 +306,6 @@
     <p class="hero-meta">📍 <span>IIT Kharagpur, Kharagpur</span> &nbsp;·&nbsp; 🗓 <span>November 27–29, 2026</span></p>
     <div class="cta-row">
       <a href="#register" class="btn btn-primary">Register now</a>
-      <a href="#register" class="btn btn-ghost">Submit an abstract</a>
     </div>
   </div>
   <div class="scroll-cue">Move your cursor — the cells react ↓</div>
@@ -593,12 +593,8 @@
     <dl class="venue-details">
       <dt>Venue</dt>
       <dd>IIT Kharagpur, Kharagpur, West Bengal, India</dd>
-      <dt>Nearest airport</dt>
-      <dd>[Airport code] — approx. [XX] min by [taxi / shuttle / transit]</dd>
       <dt>Accommodation</dt>
       <dd>A block of rooms is held at [Hotel Name] until [date]. Mention "CDLS 2026" when booking.</dd>
-      <dt>Accessibility</dt>
-      <dd>The venue is step-free throughout; contact the organizers for specific accommodation requests.</dd>
     </dl>
   </div>
 </section>
@@ -606,18 +602,14 @@
 <section id="register">
   <div class="reg-wrap">
     <div>
-      <h2>Registration &amp; call for abstracts</h2>
-      <p>Registration is open to researchers and graduate students across physics, biology, ecology, and neuroscience. A limited number of contributed talk and poster slots are available for submitted abstracts.</p>
+      <h2>Registration &amp; call for posters</h2>
+      <p>Registration is open to researchers, graduate, undergraduate, and master's students across physics, chemistry, mathematics, biology, engineering, and medical sciences.</p>
       <div class="reg-actions">
         <a href="#" class="btn btn-primary">Register now</a>
-        <a href="#" class="btn btn-ghost">Submit an abstract</a>
       </div>
     </div>
     <ul class="key-dates">
-      <li><span class="kd-label">Abstract submission opens</span><span class="kd-date">Jul 1, 2026</span></li>
-      <li><span class="kd-label">Abstract deadline</span><span class="kd-date">Sep 15, 2026</span></li>
-      <li><span class="kd-label">Notification of acceptance</span><span class="kd-date">Oct 1, 2026</span></li>
-      <li><span class="kd-label">Early registration closes</span><span class="kd-date">Oct 20, 2026</span></li>
+      <li><span class="kd-label">Registration closes</span><span class="kd-date">Nov 20, 2026</span></li>
       <li><span class="kd-label">Workshop dates</span><span class="kd-date">Nov 27–29, 2026</span></li>
     </ul>
   </div>
@@ -630,20 +622,19 @@
   </div>
   <div class="committee-grid">
     <div class="committee-card">
-      <div class="committee-name">Dr. [Name]</div>
-      <div class="committee-affil">[Institution]</div>
+      <div class="committee-name"><a href="https://pintupatra05.wixsite.com/website" target="_blank" rel="noopener">Prof. Pintu Patra</a></div>
+      <div class="committee-role">Convenor</div>
+      <div class="committee-affil">Department of Physics, IIT Kharagpur</div>
     </div>
     <div class="committee-card">
-      <div class="committee-name">Dr. [Name]</div>
-      <div class="committee-affil">[Institution]</div>
+      <div class="committee-name"><a href="https://www.rkmanna.com/" target="_blank" rel="noopener">Prof. Raj Kumar Manna</a></div>
+      <div class="committee-role">Convenor</div>
+      <div class="committee-affil">School of Medical Science and Technology, IIT Kharagpur</div>
     </div>
     <div class="committee-card">
-      <div class="committee-name">Dr. [Name]</div>
-      <div class="committee-affil">[Institution]</div>
-    </div>
-    <div class="committee-card">
-      <div class="committee-name">Dr. [Name]</div>
-      <div class="committee-affil">[Institution]</div>
+      <div class="committee-name"><a href="https://sites.google.com/view/physicslab-joydipchaudhuri" target="_blank" rel="noopener">Prof. Joydip Chaudhuri</a></div>
+      <div class="committee-role">Secretary</div>
+      <div class="committee-affil">Department of Chemical Engineering, IIT Kharagpur</div>
     </div>
   </div>
 </section>
