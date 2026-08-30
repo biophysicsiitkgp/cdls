@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Collective Dynamics of Living Systems — Workshop 2027</title>
+<meta name="description" content="An interdisciplinary workshop on emergence, self-organization, and collective behavior across scales of life.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sky-top:#0A0F1F;
+    --sky-mid:#1B2547;
+    --sky-horizon:#4A3B63;
+    --ember:#E8935A;
+    --bio-cyan:#5EEAD4;
+    --paper:#F7F4EC;
+    --paper-line:#DCD7C8;
+    --ink:#161A22;
+    --ink-soft:#2B303B;
+    --muted:#5B6472;
+    --card:#FFFDF8;
+    --border:#E3DFD1;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif; font-weight:600; letter-spacing:-0.01em; color:var(--ink);}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;}
+  img{max-width:100%;}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:20px 40px;
+    transition:background .3s ease, padding .3s ease, box-shadow .3s ease;
+  }
+  nav.solid{
+    background:rgba(247,244,236,0.92);
+    backdrop-filter:blur(8px);
+    padding:14px 40px;
+    box-shadow:0 1px 0 var(--border);
+  }
+  .nav-logo{
+    font-family:'Fraunces',serif; font-weight:700; font-size:1.05rem;
+    color:#EDEEF3; letter-spacing:0.01em;
+  }
+  nav.solid .nav-logo{color:var(--ink);}
+  .nav-links{display:flex; gap:28px; list-style:none;}
+  .nav-links a{
+    font-size:0.85rem; text-decoration:none; color:#C7CCDA;
+    font-weight:500; transition:color .2s ease;
+  }
+  nav.solid .nav-links a{color:var(--muted);}
+  .nav-links a:hover{color:var(--bio-cyan);}
+  nav.solid .nav-links a:hover{color:#0F6E56;}
+  .nav-toggle{display:none;}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative; height:100vh; min-height:640px;
+    overflow:hidden;
+    background:linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 55%, var(--sky-horizon) 88%, #6B4A4F 100%);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .hero canvas{position:absolute; inset:0; width:100%; height:100%;}
+  .hero-grain{
+    position:absolute; inset:0; pointer-events:none; opacity:0.06; mix-blend-mode:overlay;
+    background-image:radial-gradient(circle at 20% 30%, #fff 0, transparent 0.6px),
+      radial-gradient(circle at 60% 70%, #fff 0, transparent 0.6px),
+      radial-gradient(circle at 80% 20%, #fff 0, transparent 0.6px);
+    background-size:3px 3px, 5px 5px, 4px 4px;
+  }
+  .hero-content{
+    position:relative; z-index:2; text-align:center; padding:0 24px;
+    max-width:820px;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.14em;
+    color:var(--bio-cyan); text-transform:uppercase; margin-bottom:20px;
+    display:inline-block; border:1px solid rgba(94,234,212,0.35); padding:6px 14px; border-radius:999px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem, 6vw, 4.6rem); line-height:1.05; color:#F3F4F8;
+    margin-bottom:20px;
+  }
+  .hero h1 em{font-style:italic; color:var(--bio-cyan);}
+  .hero p.sub{
+    font-size:1.05rem; color:#C7CCDA; max-width:600px; margin:0 auto 30px;
+    font-weight:400;
+  }
+  .hero-meta{
+    font-family:'IBM Plex Mono',monospace; font-size:0.85rem; color:#9FE1CB;
+    margin-bottom:36px; letter-spacing:0.02em;
+  }
+  .hero-meta span{color:#EDEEF3;}
+  .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:13px 28px; border-radius:6px; font-size:0.92rem;
+    font-weight:600; text-decoration:none; transition:transform .15s ease, box-shadow .15s ease;
+    cursor:pointer; border:none; font-family:'Inter',sans-serif;
+  }
+  .btn-primary{background:var(--bio-cyan); color:#04342C;}
+  .btn-primary:hover{transform:translateY(-1px); box-shadow:0 6px 20px rgba(94,234,212,0.25);}
+  .btn-ghost{background:transparent; color:#EDEEF3; border:1px solid rgba(237,238,243,0.35);}
+  .btn-ghost:hover{border-color:var(--bio-cyan); color:var(--bio-cyan);}
+  .scroll-cue{
+    position:absolute; bottom:28px; left:50%; transform:translateX(-50%);
+    z-index:2; color:#8891A6; font-size:0.7rem; font-family:'IBM Plex Mono',monospace;
+    letter-spacing:0.12em; text-transform:uppercase; opacity:0.75;
+  }
+
+  /* ---------- generic section ---------- */
+  section{padding:100px 24px; max-width:1080px; margin:0 auto;}
+  .section-head{max-width:640px; margin-bottom:56px;}
+  .section-tag{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.14em;
+    text-transform:uppercase; color:#0F6E56; margin-bottom:14px; display:block;
+  }
+  .section-head h2{font-size:clamp(1.8rem,3.4vw,2.6rem); margin-bottom:14px;}
+  .section-head p{color:var(--muted); font-size:1.02rem;}
+
+  /* graph paper texture band */
+  .field-notes{
+    background-image:
+      linear-gradient(var(--paper-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--paper-line) 1px, transparent 1px);
+    background-size:32px 32px;
+    background-position:center;
+    background-color:var(--paper);
+  }
+
+  /* ---------- about / scales ---------- */
+  .about-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;}
+  .about-grid p{color:var(--ink-soft); margin-bottom:16px; font-size:1.02rem;}
+  .scale-diagram{display:flex; flex-direction:column; gap:0;}
+  .scale-row{display:flex; align-items:center; gap:16px; padding:14px 0; border-bottom:1px dashed var(--border);}
+  .scale-row:last-child{border-bottom:none;}
+  .scale-icon{
+    width:40px; height:40px; border-radius:50%; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    background:var(--card); border:1px solid var(--border);
+  }
+  .scale-label{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em;}
+  .scale-name{font-family:'Fraunces',serif; font-weight:600; font-size:1.02rem;}
+
+  /* ---------- themes ---------- */
+  .theme-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .theme-card{
+    background:var(--card); border:1px solid var(--border); border-radius:10px;
+    padding:26px 24px; transition:border-color .2s ease, transform .2s ease;
+  }
+  .theme-card:hover{border-color:var(--bio-cyan); transform:translateY(-2px);}
+  .theme-tag{
+    font-family:'IBM Plex Mono',monospace; font-size:0.68rem; color:#0F6E56;
+    background:#E1F5EE; padding:3px 9px; border-radius:4px; letter-spacing:0.06em;
+  }
+  .theme-card h3{font-size:1.08rem; margin:14px 0 8px;}
+  .theme-card p{color:var(--muted); font-size:0.92rem;}
+
+  /* ---------- speakers ---------- */
+  .speaker-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  .speaker-card{background:var(--card); border:1px solid var(--border); border-radius:10px; padding:22px;}
+  .speaker-top{display:flex; align-items:center; gap:14px; margin-bottom:14px;}
+  .avatar{
+    width:48px; height:48px; border-radius:50%; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces',serif; font-weight:700; font-size:0.95rem;
+    background:var(--sky-mid); color:var(--bio-cyan);
+  }
+  .speaker-name{font-family:'Fraunces',serif; font-weight:600; font-size:1rem;}
+  .speaker-affil{font-size:0.82rem; color:var(--muted);}
+  .speaker-talk{font-size:0.88rem; color:var(--ink-soft); font-style:italic; margin-bottom:10px;}
+  .field-tag{
+    font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.06em;
+    padding:2px 8px; border-radius:4px; border:1px solid var(--border); color:var(--muted);
+  }
+
+  /* ---------- schedule ---------- */
+  .day-tabs{display:flex; gap:10px; margin-bottom:28px;}
+  .day-tab{
+    font-family:'IBM Plex Mono',monospace; font-size:0.82rem; padding:9px 18px;
+    border:1px solid var(--border); border-radius:999px; background:var(--card);
+    cursor:pointer; color:var(--muted); transition:all .15s ease;
+  }
+  .day-tab.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
+  .schedule-list{display:none; flex-direction:column; gap:0;}
+  .schedule-list.active{display:flex;}
+  .sched-row{
+    display:grid; grid-template-columns:110px 1fr auto; gap:18px; align-items:baseline;
+    padding:16px 0; border-bottom:1px solid var(--border);
+  }
+  .sched-time{font-family:'IBM Plex Mono',monospace; font-size:0.85rem; color:#0F6E56;}
+  .sched-title{font-weight:500; font-size:0.98rem;}
+  .sched-speaker{color:var(--muted); font-size:0.86rem;}
+  .sched-room{font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--muted); white-space:nowrap;}
+
+  /* ---------- venue ---------- */
+  .venue-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
+  .venue-map{
+    aspect-ratio:4/3; border-radius:10px; border:1px solid var(--border);
+    background:
+      linear-gradient(135deg, #E1F5EE 25%, transparent 25%) -8px 0/16px 16px,
+      linear-gradient(225deg, #E1F5EE 25%, transparent 25%) -8px 0/16px 16px,
+      linear-gradient(315deg, #E1F5EE 25%, transparent 25%) 0px 0/16px 16px,
+      linear-gradient(45deg, #E1F5EE 25%, var(--card) 25%) 0px 0/16px 16px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:var(--muted); text-align:center; padding:20px;
+  }
+  .venue-details dt{font-family:'IBM Plex Mono',monospace; font-size:0.7rem; text-transform:uppercase; color:var(--muted); letter-spacing:0.08em; margin-top:18px;}
+  .venue-details dt:first-child{margin-top:0;}
+  .venue-details dd{font-size:1rem; margin-top:4px;}
+
+  /* ---------- registration ---------- */
+  .reg-wrap{
+    background:var(--ink); color:var(--paper); border-radius:14px; padding:56px 48px;
+    display:grid; grid-template-columns:1fr 1fr; gap:48px;
+  }
+  .reg-wrap h2{color:var(--paper);}
+  .reg-wrap p{color:#B7BEC9;}
+  .key-dates{list-style:none;}
+  .key-dates li{
+    display:flex; justify-content:space-between; padding:12px 0;
+    border-bottom:1px solid rgba(255,255,255,0.12); font-size:0.92rem;
+  }
+  .key-dates li:last-child{border-bottom:none;}
+  .key-dates .kd-label{color:#B7BEC9;}
+  .key-dates .kd-date{font-family:'IBM Plex Mono',monospace; color:var(--bio-cyan);}
+  .reg-actions{margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;}
+
+  /* ---------- committee ---------- */
+  .committee-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:24px;}
+  .committee-card{text-align:left;}
+  .committee-name{font-family:'Fraunces',serif; font-weight:600; font-size:0.98rem;}
+  .committee-affil{font-size:0.82rem; color:var(--muted);}
+
+  /* ---------- footer ---------- */
+  footer{
+    background:var(--sky-top); color:#8891A6; padding:56px 24px 32px;
+    text-align:center; font-size:0.85rem;
+  }
+  footer .foot-logo{font-family:'Fraunces',serif; color:#EDEEF3; font-size:1.2rem; margin-bottom:12px;}
+  footer a{color:var(--bio-cyan); text-decoration:none;}
+  footer .foot-links{display:flex; gap:20px; justify-content:center; margin:20px 0; flex-wrap:wrap;}
+
+  @media (max-width:860px){
+    nav{padding:16px 20px;}
+    .nav-links{display:none;}
+    section{padding:70px 20px;}
+    .about-grid, .venue-grid, .reg-wrap{grid-template-columns:1fr;}
+    .theme-grid, .speaker-grid{grid-template-columns:1fr 1fr;}
+    .committee-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .theme-grid, .speaker-grid, .committee-grid{grid-template-columns:1fr;}
+    .sched-row{grid-template-columns:80px 1fr; grid-template-areas:"time title" ". speaker" ". room";}
+    .cta-row{flex-direction:column; align-items:center;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-logo">CDLS · 2027</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#themes">Themes</a></li>
+    <li><a href="#speakers">Speakers</a></li>
+    <li><a href="#schedule">Schedule</a></li>
+    <li><a href="#venue">Venue</a></li>
+    <li><a href="#register">Register</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <canvas id="flock"></canvas>
+  <div class="hero-grain"></div>
+  <div class="hero-content">
+    <span class="eyebrow">Interdisciplinary workshop</span>
+    <h1>Collective Dynamics<br>of <em>Living Systems</em></h1>
+    <p class="sub">From flocking birds to firing neurons — how simple local rules give rise to emergent, adaptive behavior across scales of life.</p>
+    <p class="hero-meta">📍 <span>[Venue Name], [City]</span> &nbsp;·&nbsp; 🗓 <span>March 16–18, 2027</span></p>
+    <div class="cta-row">
+      <a href="#register" class="btn btn-primary">Register now</a>
+      <a href="#register" class="btn btn-ghost">Submit an abstract</a>
+    </div>
+  </div>
+  <div class="scroll-cue">Move your cursor — the flock reacts ↓</div>
+</section>
+
+<section id="about" class="field-notes">
+  <div class="section-head">
+    <span class="section-tag">Why this workshop</span>
+    <h2>Life organizes itself, at every scale.</h2>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p>From cytoskeletal filaments to fish schools, living matter routinely produces coordinated, adaptive behavior without central control. This workshop brings together physicists, biologists, ecologists, and neuroscientists who study how local interactions between many simple units — cells, organisms, neurons — give rise to robust collective phenomena at the scale above them.</p>
+      <p>Over three days of talks, posters, and open discussion sessions, we'll ask what unifying principles, if any, connect a slime mold solving a maze, a starling murmuration evading a hawk, and a cortical network encoding a decision.</p>
+    </div>
+    <div class="scale-diagram">
+      <div class="scale-row">
+        <div class="scale-icon">🧫</div>
+        <div>
+          <div class="scale-label">Scale 01</div>
+          <div class="scale-name">Cells &amp; tissues</div>
+        </div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-icon">🐜</div>
+        <div>
+          <div class="scale-label">Scale 02</div>
+          <div class="scale-name">Organisms &amp; colonies</div>
+        </div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-icon">🐦</div>
+        <div>
+          <div class="scale-label">Scale 03</div>
+          <div class="scale-name">Groups &amp; swarms</div>
+        </div>
+      </div>
+      <div class="scale-row">
+        <div class="scale-icon">🌍</div>
+        <div>
+          <div class="scale-label">Scale 04</div>
+          <div class="scale-name">Populations &amp; ecosystems</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="themes">
+  <div class="section-head">
+    <span class="section-tag">Scope</span>
+    <h2>Themes &amp; topics</h2>
+    <p>Six threads run through the program, spanning wet-lab biology, field ecology, and theoretical physics.</p>
+  </div>
+  <div class="theme-grid">
+    <div class="theme-card">
+      <span class="theme-tag">PHYS</span>
+      <h3>Active matter &amp; swarming</h3>
+      <p>Self-propelled particles, flocking transitions, and the statistical physics of collective motion.</p>
+    </div>
+    <div class="theme-card">
+      <span class="theme-tag">BIO</span>
+      <h3>Morphogenesis &amp; pattern formation</h3>
+      <p>How cell collectives build reproducible tissue-scale structure from local signaling rules.</p>
+    </div>
+    <div class="theme-card">
+      <span class="theme-tag">ECO</span>
+      <h3>Social insects &amp; colony behavior</h3>
+      <p>Division of labor, stigmergy, and decision-making in ant, bee, and termite colonies.</p>
+    </div>
+    <div class="theme-card">
+      <span class="theme-tag">NEURO</span>
+      <h3>Neural population dynamics</h3>
+      <p>Coordinated activity across neurons as a collective computation problem.</p>
+    </div>
+    <div class="theme-card">
+      <span class="theme-tag">EPI</span>
+      <h3>Spreading processes</h3>
+      <p>Epidemics, information cascades, and opinion dynamics on networks of interacting agents.</p>
+    </div>
+    <div class="theme-card">
+      <span class="theme-tag">MATH</span>
+      <h3>Theory &amp; inference</h3>
+      <p>Data-driven models for inferring interaction rules from collective trajectories.</p>
+    </div>
+  </div>
+</section>
+
+<section id="speakers" class="field-notes">
+  <div class="section-head">
+    <span class="section-tag">Program</span>
+    <h2>Invited speakers</h2>
+    <p>A confirmed list will grow as the program is finalized — placeholders below mark the format.</p>
+  </div>
+  <div class="speaker-grid">
+    <div class="speaker-card">
+      <div class="speaker-top">
+        <div class="avatar">AK</div>
+        <div>
+          <div class="speaker-name">Dr. A. Kestrel</div>
+          <div class="speaker-affil">[Institution]</div>
+        </div>
+      </div>
+      <div class="speaker-talk">"Emergent order in dense starling flocks"</div>
+      <span class="field-tag">PHYS</span>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-top">
+        <div class="avatar">MR</div>
+        <div>
+          <div class="speaker-name">Dr. M. Reyes</div>
+          <div class="speaker-affil">[Institution]</div>
+        </div>
+      </div>
+      <div class="speaker-talk">"Collective decision-making in cell sheets"</div>
+      <span class="field-tag">BIO</span>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-top">
+        <div class="avatar">JT</div>
+        <div>
+          <div class="speaker-name">Dr. J. Tan</div>
+          <div class="speaker-affil">[Institution]</div>
+        </div>
+      </div>
+      <div class="speaker-talk">"Stigmergic computation in ant colonies"</div>
+      <span class="field-tag">ECO</span>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-top">
+        <div class="avatar">SO</div>
+        <div>
+          <div class="speaker-name">Dr. S. Okafor</div>
+          <div class="speaker-affil">[Institution]</div>
+        </div>
+      </div>
+      <div class="speaker-talk">"Population coding as a collective code"</div>
+      <span class="field-tag">NEURO</span>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-top">
+        <div class="avatar">LB</div>
+        <div>
+          <div class="speaker-name">Dr. L. Bianchi</div>
+          <div class="speaker-affil">[Institution]</div>
+        </div>
+      </div>
+      <div class="speaker-talk">"Inferring interaction rules from trajectory data"</div>
+      <span class="field-tag">MATH</span>
+    </div>
+    <div class="speaker-card">
+      <div class="speaker-top">
+        <div class="avatar">PH</div>
+        <div>
+          <div class="speaker-name">Dr. P. Haddad</div>
+          <div class="speaker-affil">[Institution]</div>
+        </div>
+      </div>
+      <div class="speaker-talk">"Opinion dynamics on adaptive networks"</div>
+      <span class="field-tag">EPI</span>
+    </div>
+  </div>
+</section>
+
+<section id="schedule">
+  <div class="section-head">
+    <span class="section-tag">Program</span>
+    <h2>Schedule</h2>
+    <p>Times are placeholders — a full timetable with room assignments will be posted closer to the workshop.</p>
+  </div>
+  <div class="day-tabs">
+    <button class="day-tab active" data-day="1">Day 1 · Mar 16</button>
+    <button class="day-tab" data-day="2">Day 2 · Mar 17</button>
+    <button class="day-tab" data-day="3">Day 3 · Mar 18</button>
+  </div>
+
+  <div class="schedule-list active" data-day="1">
+    <div class="sched-row">
+      <div class="sched-time">09:00</div>
+      <div><div class="sched-title">Registration &amp; coffee</div><div class="sched-speaker">Foyer opens</div></div>
+      <div class="sched-room">MAIN HALL</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">09:45</div>
+      <div><div class="sched-title">Welcome &amp; opening remarks</div><div class="sched-speaker">Organizing committee</div></div>
+      <div class="sched-room">MAIN HALL</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">10:15</div>
+      <div><div class="sched-title">Emergent order in dense starling flocks</div><div class="sched-speaker">Dr. A. Kestrel</div></div>
+      <div class="sched-room">MAIN HALL</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">11:15</div>
+      <div><div class="sched-title">Coffee break</div><div class="sched-speaker">—</div></div>
+      <div class="sched-room">FOYER</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">11:45</div>
+      <div><div class="sched-title">Collective decision-making in cell sheets</div><div class="sched-speaker">Dr. M. Reyes</div></div>
+      <div class="sched-room">MAIN HALL</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">13:00</div>
+      <div><div class="sched-title">Lunch</div><div class="sched-speaker">—</div></div>
+      <div class="sched-room">COURTYARD</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">14:30</div>
+      <div><div class="sched-title">Poster session I</div><div class="sched-speaker">All attendees</div></div>
+      <div class="sched-room">GALLERY</div>
+    </div>
+  </div>
+
+  <div class="schedule-list" data-day="2">
+    <div class="sched-row">
+      <div class="sched-time">09:30</div>
+      <div><div class="sched-title">Stigmergic computation in ant colonies</div><div class="sched-speaker">Dr. J. Tan</div></div>
+      <div class="sched-room">MAIN HALL</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">10:45</div>
+      <div><div class="sched-title">Population coding as a collective code</div><div class="sched-speaker">Dr. S. Okafor</div></div>
+      <div class="sched-room">MAIN HALL</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">12:00</div>
+      <div><div class="sched-title">Lunch</div><div class="sched-speaker">—</div></div>
+      <div class="sched-room">COURTYARD</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">13:30</div>
+      <div><div class="sched-title">Contributed talks I</div><div class="sched-speaker">Selected from abstracts</div></div>
+      <div class="sched-room">ROOM B</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">15:00</div>
+      <div><div class="sched-title">Panel: what would a theory of collectives look like?</div><div class="sched-speaker">Moderated discussion</div></div>
+      <div class="sched-room">MAIN HALL</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">19:00</div>
+      <div><div class="sched-title">Workshop dinner</div><div class="sched-speaker">—</div></div>
+      <div class="sched-room">[OFFSITE]</div>
+    </div>
+  </div>
+
+  <div class="schedule-list" data-day="3">
+    <div class="sched-row">
+      <div class="sched-time">09:30</div>
+      <div><div class="sched-title">Inferring interaction rules from trajectory data</div><div class="sched-speaker">Dr. L. Bianchi</div></div>
+      <div class="sched-room">MAIN HALL</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">10:45</div>
+      <div><div class="sched-title">Opinion dynamics on adaptive networks</div><div class="sched-speaker">Dr. P. Haddad</div></div>
+      <div class="sched-room">MAIN HALL</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">12:00</div>
+      <div><div class="sched-title">Lunch</div><div class="sched-speaker">—</div></div>
+      <div class="sched-room">COURTYARD</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">13:30</div>
+      <div><div class="sched-title">Contributed talks II</div><div class="sched-speaker">Selected from abstracts</div></div>
+      <div class="sched-room">ROOM B</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">15:00</div>
+      <div><div class="sched-title">Closing synthesis &amp; next steps</div><div class="sched-speaker">Organizing committee</div></div>
+      <div class="sched-room">MAIN HALL</div>
+    </div>
+  </div>
+</section>
+
+<section id="venue" class="field-notes">
+  <div class="section-head">
+    <span class="section-tag">Logistics</span>
+    <h2>Venue &amp; travel</h2>
+  </div>
+  <div class="venue-grid">
+    <div class="venue-map">Map embed placeholder<br>— add your venue's map here —</div>
+    <dl class="venue-details">
+      <dt>Venue</dt>
+      <dd>[Venue Name], [Street Address], [City]</dd>
+      <dt>Nearest airport</dt>
+      <dd>[Airport code] — approx. [XX] min by [taxi / shuttle / transit]</dd>
+      <dt>Accommodation</dt>
+      <dd>A block of rooms is held at [Hotel Name] until [date]. Mention "CDLS 2027" when booking.</dd>
+      <dt>Accessibility</dt>
+      <dd>The venue is step-free throughout; contact the organizers for specific accommodation requests.</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="register">
+  <div class="reg-wrap">
+    <div>
+      <h2>Registration &amp; call for abstracts</h2>
+      <p>Registration is open to researchers and graduate students across physics, biology, ecology, and neuroscience. A limited number of contributed talk and poster slots are available for submitted abstracts.</p>
+      <div class="reg-actions">
+        <a href="#" class="btn btn-primary">Register now</a>
+        <a href="#" class="btn btn-ghost">Submit an abstract</a>
+      </div>
+    </div>
+    <ul class="key-dates">
+      <li><span class="kd-label">Abstract submission opens</span><span class="kd-date">Nov 1, 2026</span></li>
+      <li><span class="kd-label">Abstract deadline</span><span class="kd-date">Jan 15, 2027</span></li>
+      <li><span class="kd-label">Notification of acceptance</span><span class="kd-date">Feb 1, 2027</span></li>
+      <li><span class="kd-label">Early registration closes</span><span class="kd-date">Feb 15, 2027</span></li>
+      <li><span class="kd-label">Workshop dates</span><span class="kd-date">Mar 16–18, 2027</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="section-head">
+    <span class="section-tag">Organizers</span>
+    <h2>Organizing committee</h2>
+  </div>
+  <div class="committee-grid">
+    <div class="committee-card">
+      <div class="committee-name">Dr. [Name]</div>
+      <div class="committee-affil">[Institution]</div>
+    </div>
+    <div class="committee-card">
+      <div class="committee-name">Dr. [Name]</div>
+      <div class="committee-affil">[Institution]</div>
+    </div>
+    <div class="committee-card">
+      <div class="committee-name">Dr. [Name]</div>
+      <div class="committee-affil">[Institution]</div>
+    </div>
+    <div class="committee-card">
+      <div class="committee-name">Dr. [Name]</div>
+      <div class="committee-affil">[Institution]</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-logo">Collective Dynamics of Living Systems</div>
+  <p>A workshop on emergence and self-organization across scales of life.</p>
+  <div class="foot-links">
+    <a href="mailto:organizers@example.org">organizers@example.org</a>
+    <a href="#">Twitter / X</a>
+    <a href="#">Mastodon</a>
+  </div>
+  <p style="margin-top:20px; font-size:0.75rem; color:#5B6472;">© 2027 CDLS Workshop. Site content is a placeholder template — edit freely.</p>
+</footer>
+
+<script>
+  // nav solid-on-scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) nav.classList.add('solid');
+    else nav.classList.remove('solid');
+  });
+
+  // schedule day tabs
+  document.querySelectorAll('.day-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const day = tab.dataset.day;
+      document.querySelectorAll('.day-tab').forEach(t => t.classList.toggle('active', t === tab));
+      document.querySelectorAll('.schedule-list').forEach(list => {
+        list.classList.toggle('active', list.dataset.day === day);
+      });
+    });
+  });
+
+  // ---- flocking simulation (boids) ----
+  const canvas = document.getElementById('flock');
+  const ctx = canvas.getContext('2d');
+  const heroEl = document.querySelector('.hero');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let W, H;
+  function resize() {
+    W = canvas.width = heroEl.clientWidth;
+    H = canvas.height = heroEl.clientHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const NUM_BOIDS = 130;
+  const boids = [];
+  for (let i = 0; i < NUM_BOIDS; i++) {
+    boids.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      vx: (Math.random() - 0.5) * 1.5,
+      vy: (Math.random() - 0.5) * 1.5
+    });
+  }
+
+  let mouse = { x: -9999, y: -9999, active: false };
+  heroEl.addEventListener('mousemove', e => {
+    const rect = heroEl.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+    mouse.active = true;
+  });
+  heroEl.addEventListener('mouseleave', () => { mouse.active = false; });
+
+  const PERCEPTION = 55;
+  const SEPARATION_DIST = 22;
+  const MAX_SPEED = 2.4;
+  const MOUSE_RADIUS = 110;
+
+  function step() {
+    for (const b of boids) {
+      let alignX = 0, alignY = 0, cohX = 0, cohY = 0, sepX = 0, sepY = 0, count = 0;
+
+      for (const other of boids) {
+        if (other === b) continue;
+        const dx = other.x - b.x, dy = other.y - b.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < PERCEPTION * PERCEPTION) {
+          alignX += other.vx; alignY += other.vy;
+          cohX += other.x; cohY += other.y;
+          count++;
+          if (d2 < SEPARATION_DIST * SEPARATION_DIST && d2 > 0.001) {
+            sepX -= dx / d2; sepY -= dy / d2;
+          }
+        }
+      }
+
+      if (count > 0) {
+        alignX /= count; alignY /= count;
+        cohX = (cohX / count) - b.x; cohY = (cohY / count) - b.y;
+        b.vx += alignX * 0.02 + cohX * 0.0006 + sepX * 0.9;
+        b.vy += alignY * 0.02 + cohY * 0.0006 + sepY * 0.9;
+      }
+
+      if (mouse.active) {
+        const dx = b.x - mouse.x, dy = b.y - mouse.y;
+        const d2 = dx * dx + dy * dy;
+        if (d2 < MOUSE_RADIUS * MOUSE_RADIUS && d2 > 0.001) {
+          const f = (MOUSE_RADIUS * MOUSE_RADIUS - d2) / (MOUSE_RADIUS * MOUSE_RADIUS);
+          b.vx += (dx / Math.sqrt(d2)) * f * 0.9;
+          b.vy += (dy / Math.sqrt(d2)) * f * 0.9;
+        }
+      }
+
+      const margin = 40;
+      if (b.x < margin) b.vx += 0.06;
+      if (b.x > W - margin) b.vx -= 0.06;
+      if (b.y < margin) b.vy += 0.06;
+      if (b.y > H - margin) b.vy -= 0.06;
+
+      const speed = Math.hypot(b.vx, b.vy);
+      if (speed > MAX_SPEED) { b.vx = (b.vx / speed) * MAX_SPEED; b.vy = (b.vy / speed) * MAX_SPEED; }
+      if (speed < 0.6) { b.vx = (b.vx / (speed || 1)) * 0.6; b.vy = (b.vy / (speed || 1)) * 0.6; }
+
+      b.x += b.vx; b.y += b.vy;
+      if (b.x < 0) b.x = W; if (b.x > W) b.x = 0;
+      if (b.y < 0) b.y = H; if (b.y > H) b.y = 0;
+    }
+  }
+
+  function draw() {
+    ctx.fillStyle = 'rgba(10, 15, 31, 0.28)';
+    ctx.fillRect(0, 0, W, H);
+
+    ctx.globalCompositeOperation = 'lighter';
+    for (const b of boids) {
+      const angle = Math.atan2(b.vy, b.vx);
+      const len = 6;
+      ctx.beginPath();
+      ctx.moveTo(b.x + Math.cos(angle) * len, b.y + Math.sin(angle) * len);
+      ctx.lineTo(b.x + Math.cos(angle + 2.5) * 3, b.y + Math.sin(angle + 2.5) * 3);
+      ctx.lineTo(b.x + Math.cos(angle - 2.5) * 3, b.y + Math.sin(angle - 2.5) * 3);
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(94, 234, 212, 0.55)';
+      ctx.fill();
+    }
+    ctx.globalCompositeOperation = 'source-over';
+  }
+
+  function loop() {
+    step();
+    draw();
+    requestAnimationFrame(loop);
+  }
+
+  // initial paint so canvas isn't blank
+  ctx.fillStyle = 'rgba(10, 15, 31, 1)';
+  ctx.fillRect(0, 0, W, H);
+
+  if (!prefersReducedMotion) {
+    requestAnimationFrame(loop);
+  } else {
+    draw();
+  }
+</script>
+
+</body>
+</html>
