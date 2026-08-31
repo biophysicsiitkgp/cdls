@@ -218,14 +218,9 @@
   .venue-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;}
   .venue-map{
     aspect-ratio:4/3; border-radius:10px; border:1px solid var(--border);
-    background:
-      linear-gradient(135deg, #E1F5EE 25%, transparent 25%) -8px 0/16px 16px,
-      linear-gradient(225deg, #E1F5EE 25%, transparent 25%) -8px 0/16px 16px,
-      linear-gradient(315deg, #E1F5EE 25%, transparent 25%) 0px 0/16px 16px,
-      linear-gradient(45deg, #E1F5EE 25%, var(--card) 25%) 0px 0/16px 16px;
-    display:flex; align-items:center; justify-content:center;
-    font-family:'IBM Plex Mono',monospace; font-size:0.78rem; color:var(--muted); text-align:center; padding:20px;
+    overflow:hidden;
   }
+  .venue-map iframe{width:100%; height:100%; border:0; display:block;}
   .venue-details dt{font-family:'IBM Plex Mono',monospace; font-size:0.7rem; text-transform:uppercase; color:var(--muted); letter-spacing:0.08em; margin-top:18px;}
   .venue-details dt:first-child{margin-top:0;}
   .venue-details dd{font-size:1rem; margin-top:4px;}
@@ -395,87 +390,50 @@
   </div>
 </section>
 
+
 <section id="speakers" class="field-notes">
   <div class="section-head">
     <span class="section-tag">Program</span>
-    <h2>Invited speakers</h2>
-    <p>A confirmed list will grow as the program is finalized — placeholders below mark the format.</p>
+    <h2>Speakers</h2>
+    <p>A confirmed list will grow as the program is finalized.</p>
   </div>
   <div class="speaker-grid">
     <div class="speaker-card">
       <div class="speaker-top">
         <div class="avatar">AK</div>
         <div>
-          <div class="speaker-name">Dr. A. Kestrel</div>
-          <div class="speaker-affil">[Institution]</div>
+          <div class="speaker-name">Prof. Pintu Patra</div>
+          <div class="speaker-affil">IIT Kharagpur</div>
         </div>
       </div>
-      <div class="speaker-talk">"Emergent order in dense starling flocks"</div>
       <span class="field-tag">PHYS</span>
     </div>
     <div class="speaker-card">
       <div class="speaker-top">
         <div class="avatar">MR</div>
         <div>
-          <div class="speaker-name">Dr. M. Reyes</div>
-          <div class="speaker-affil">[Institution]</div>
+          <div class="speaker-name">Prof Raj Kumar Manna</div>
+          <div class="speaker-affil">IIT Kharagpur</div>
         </div>
       </div>
-      <div class="speaker-talk">"Collective decision-making in cell sheets"</div>
-      <span class="field-tag">BIO</span>
+      <span class="field-tag">SMST</span>
     </div>
     <div class="speaker-card">
       <div class="speaker-top">
         <div class="avatar">JT</div>
         <div>
-          <div class="speaker-name">Dr. J. Tan</div>
-          <div class="speaker-affil">[Institution]</div>
+          <div class="speaker-name">Prof. Joydip Chaudhuri </div>
+          <div class="speaker-affil">IIT Kharagpur</div>
         </div>
       </div>
-      <div class="speaker-talk">"Stigmergic computation in ant colonies"</div>
-      <span class="field-tag">ECO</span>
-    </div>
-    <div class="speaker-card">
-      <div class="speaker-top">
-        <div class="avatar">SO</div>
-        <div>
-          <div class="speaker-name">Dr. S. Okafor</div>
-          <div class="speaker-affil">[Institution]</div>
-        </div>
-      </div>
-      <div class="speaker-talk">"Population coding as a collective code"</div>
-      <span class="field-tag">NEURO</span>
-    </div>
-    <div class="speaker-card">
-      <div class="speaker-top">
-        <div class="avatar">LB</div>
-        <div>
-          <div class="speaker-name">Dr. L. Bianchi</div>
-          <div class="speaker-affil">[Institution]</div>
-        </div>
-      </div>
-      <div class="speaker-talk">"Inferring interaction rules from trajectory data"</div>
-      <span class="field-tag">MATH</span>
-    </div>
-    <div class="speaker-card">
-      <div class="speaker-top">
-        <div class="avatar">PH</div>
-        <div>
-          <div class="speaker-name">Dr. P. Haddad</div>
-          <div class="speaker-affil">[Institution]</div>
-        </div>
-      </div>
-      <div class="speaker-talk">"Opinion dynamics on adaptive networks"</div>
-      <span class="field-tag">EPI</span>
-    </div>
-  </div>
+      <span class="field-tag">CHEM ENG</span>
+    </div>    
 </section>
 
 <section id="schedule">
   <div class="section-head">
     <span class="section-tag">Program</span>
     <h2>Schedule</h2>
-    <p>Times are placeholders — a full timetable with room assignments will be posted closer to the workshop.</p>
   </div>
   <div class="day-tabs">
     <button class="day-tab active" data-day="1">Day 1 · Nov 27</button>
@@ -485,133 +443,106 @@
 
   <div class="schedule-list active" data-day="1">
     <div class="sched-row">
-      <div class="sched-time">09:00</div>
+      <div class="sched-time">14:00</div>
       <div><div class="sched-title">Registration &amp; coffee</div><div class="sched-speaker">Foyer opens</div></div>
-      <div class="sched-room">MAIN HALL</div>
+      <div class="sched-room">Vikramshila Foyer</div>
     </div>
     <div class="sched-row">
-      <div class="sched-time">09:45</div>
+      <div class="sched-time">14:45</div>
       <div><div class="sched-title">Welcome &amp; opening remarks</div><div class="sched-speaker">Organizing committee</div></div>
-      <div class="sched-room">MAIN HALL</div>
+      <div class="sched-room">Gargi Auditorium</div>
     </div>
     <div class="sched-row">
-      <div class="sched-time">10:15</div>
-      <div><div class="sched-title">Emergent order in dense starling flocks</div><div class="sched-speaker">Dr. A. Kestrel</div></div>
-      <div class="sched-room">MAIN HALL</div>
+      <div class="sched-time">15:00 - 19:00</div>
+      <div><div class="sched-title">Talks</div><div class="sched-speaker">Invited Speakers Session </div></div>
+      <div class="sched-room">Gargi Auditorium</div>
     </div>
     <div class="sched-row">
-      <div class="sched-time">11:15</div>
-      <div><div class="sched-title">Coffee break</div><div class="sched-speaker">—</div></div>
-      <div class="sched-room">FOYER</div>
-    </div>
-    <div class="sched-row">
-      <div class="sched-time">11:45</div>
-      <div><div class="sched-title">Collective decision-making in cell sheets</div><div class="sched-speaker">Dr. M. Reyes</div></div>
-      <div class="sched-room">MAIN HALL</div>
-    </div>
-    <div class="sched-row">
-      <div class="sched-time">13:00</div>
-      <div><div class="sched-title">Lunch</div><div class="sched-speaker">—</div></div>
-      <div class="sched-room">COURTYARD</div>
-    </div>
-    <div class="sched-row">
-      <div class="sched-time">14:30</div>
-      <div><div class="sched-title">Poster session I</div><div class="sched-speaker">All attendees</div></div>
-      <div class="sched-room">GALLERY</div>
+      <div class="sched-time">19:30 onwards</div>
+      <div><div class="sched-title">Dinner</div><div class="sched-speaker"> </div></div>
+      <div class="sched-room">Vikramshila Foyer</div>
     </div>
   </div>
 
   <div class="schedule-list" data-day="2">
     <div class="sched-row">
-      <div class="sched-time">09:30</div>
-      <div><div class="sched-title">Stigmergic computation in ant colonies</div><div class="sched-speaker">Dr. J. Tan</div></div>
-      <div class="sched-room">MAIN HALL</div>
+      <div class="sched-time">08:00 -09:00</div>
+      <div><div class="sched-title">Breakfast</div><div class="sched-speaker"></div></div>
+      <div class="sched-room">Vikramshila Foyer</div>
     </div>
     <div class="sched-row">
-      <div class="sched-time">10:45</div>
-      <div><div class="sched-title">Population coding as a collective code</div><div class="sched-speaker">Dr. S. Okafor</div></div>
-      <div class="sched-room">MAIN HALL</div>
+      <div class="sched-time">09:00 - 10.30</div>
+      <div><div class="sched-title">Talks</div><div class="sched-speaker">Invited Speakers Session</div></div>
+      <div class="sched-room">Gargi Auditorium</div>
     </div>
     <div class="sched-row">
-      <div class="sched-time">12:00</div>
-      <div><div class="sched-title">Lunch</div><div class="sched-speaker">—</div></div>
-      <div class="sched-room">COURTYARD</div>
+      <div class="sched-time">10:30</div>
+      <div><div class="sched-title">Cofee</div><div class="sched-speaker">—</div></div>
+      <div class="sched-room">Vikramshila Foyer</div>
     </div>
     <div class="sched-row">
-      <div class="sched-time">13:30</div>
-      <div><div class="sched-title">Contributed talks I</div><div class="sched-speaker">Selected from abstracts</div></div>
-      <div class="sched-room">ROOM B</div>
+      <div class="sched-time">11:00-13.00</div>
+      <div><div class="sched-title">Talks</div><div class="sched-speaker">Invited Speakers Session</div></div>
+      <div class="sched-room">Gargi Auditorium</div>
     </div>
     <div class="sched-row">
-      <div class="sched-time">15:00</div>
-      <div><div class="sched-title">Panel: what would a theory of collectives look like?</div><div class="sched-speaker">Moderated discussion</div></div>
-      <div class="sched-room">MAIN HALL</div>
+      <div class="sched-time">13:00</div>
+      <div><div class="sched-title">Lunch and Poster Session</div><div class="sched-speaker"></div></div>
+      <div class="sched-room">Vikramshila Foyer</div>
     </div>
     <div class="sched-row">
-      <div class="sched-time">19:00</div>
+      <div class="sched-time">15:00-17.00</div>
+      <div><div class="sched-title">Talks</div><div class="sched-speaker">Invited Speakers Session</div></div>
+      <div class="sched-room">Gargi Auditorium</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">17:00-17.30</div>
+      <div><div class="sched-title">Cofee</div><div class="sched-speaker"></div></div>
+      <div class="sched-room">Vikramshila Foyer</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">17:30-19:30</div>
+      <div><div class="sched-title">Talks</div><div class="sched-speaker">—</div></div>
+      <div class="sched-room">argi Auditorium</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">19:30</div>
       <div><div class="sched-title">Workshop dinner</div><div class="sched-speaker">—</div></div>
       <div class="sched-room">[OFFSITE]</div>
     </div>
   </div>
 
-  <div class="schedule-list" data-day="3">
+ <div class="schedule-list" data-day="3">
     <div class="sched-row">
-      <div class="sched-time">09:30</div>
-      <div><div class="sched-title">Inferring interaction rules from trajectory data</div><div class="sched-speaker">Dr. L. Bianchi</div></div>
-      <div class="sched-room">MAIN HALL</div>
+      <div class="sched-time">08:00 -09:00</div>
+      <div><div class="sched-title">Breakfast</div><div class="sched-speaker"></div></div>
+      <div class="sched-room">Vikramshila Foyer</div>
     </div>
     <div class="sched-row">
-      <div class="sched-time">10:45</div>
-      <div><div class="sched-title">Opinion dynamics on adaptive networks</div><div class="sched-speaker">Dr. P. Haddad</div></div>
-      <div class="sched-room">MAIN HALL</div>
+      <div class="sched-time">09:00 - 10.30</div>
+      <div><div class="sched-title">Talks</div><div class="sched-speaker">Invited Speakers Session</div></div>
+      <div class="sched-room">Gargi Auditorium</div>
     </div>
     <div class="sched-row">
-      <div class="sched-time">12:00</div>
-      <div><div class="sched-title">Lunch</div><div class="sched-speaker">—</div></div>
-      <div class="sched-room">COURTYARD</div>
+      <div class="sched-time">10:30</div>
+      <div><div class="sched-title">Cofee</div><div class="sched-speaker">—</div></div>
+      <div class="sched-room">Vikramshila Foyer</div>
     </div>
     <div class="sched-row">
-      <div class="sched-time">13:30</div>
-      <div><div class="sched-title">Contributed talks II</div><div class="sched-speaker">Selected from abstracts</div></div>
-      <div class="sched-room">ROOM B</div>
+      <div class="sched-time">11:00-13.00</div>
+      <div><div class="sched-title">Talks</div><div class="sched-speaker">Invited Speakers Session</div></div>
+      <div class="sched-room">Gargi Auditorium</div>
+    </div>
+    <div class="sched-row">
+      <div class="sched-time">13:00</div>
+      <div><div class="sched-title">Lunch </div><div class="sched-speaker"></div></div>
+      <div class="sched-room">Vikramshila Foyer</div>
     </div>
     <div class="sched-row">
       <div class="sched-time">15:00</div>
-      <div><div class="sched-title">Closing synthesis &amp; next steps</div><div class="sched-speaker">Organizing committee</div></div>
-      <div class="sched-room">MAIN HALL</div>
+      <div><div class="sched-title">Departure</div><div class="sched-speaker"></div></div>
+      <div class="sched-room"></div>
     </div>
-  </div>
-</section>
-
-<section id="venue" class="field-notes">
-  <div class="section-head">
-    <span class="section-tag">Logistics</span>
-    <h2>Venue &amp; travel</h2>
-  </div>
-  <div class="venue-grid">
-    <div class="venue-map">Map embed placeholder<br>— add your venue's map here —</div>
-    <dl class="venue-details">
-      <dt>Venue</dt>
-      <dd>IIT Kharagpur, Kharagpur, West Bengal, India</dd>
-      <dt>Accommodation</dt>
-      <dd>A block of rooms is held at [Hotel Name] until [date]. Mention "CDLS 2026" when booking.</dd>
-    </dl>
-  </div>
-</section>
-
-<section id="register">
-  <div class="reg-wrap">
-    <div>
-      <h2>Registration &amp; call for posters</h2>
-      <p>Registration is open to researchers, graduate, undergraduate, and master's students across physics, chemistry, mathematics, biology, engineering, and medical sciences.</p>
-      <div class="reg-actions">
-        <a href="#" class="btn btn-primary">Register now</a>
-      </div>
-    </div>
-    <ul class="key-dates">
-      <li><span class="kd-label">Registration closes</span><span class="kd-date">Nov 20, 2026</span></li>
-      <li><span class="kd-label">Workshop dates</span><span class="kd-date">Nov 27–29, 2026</span></li>
-    </ul>
   </div>
 </section>
 
@@ -896,7 +827,7 @@
   let current = regimes[regimeIndex];
   current.init();
 
-  const REGIME_DURATION = 10000;
+  const REGIME_DURATION = 5000;
   let regimeStart = performance.now();
 
   function switchRegime() {
