@@ -241,7 +241,16 @@
   .key-dates li:last-child{border-bottom:none;}
   .key-dates .kd-label{color:#B7BEC9;}
   .key-dates .kd-date{font-family:'IBM Plex Mono',monospace; color:var(--bio-cyan);}
-  .reg-actions{margin-top:24px; display:flex; gap:12px; flex-wrap:wrap;}
+  .reg-actions{margin-top:24px; display:flex; gap:12px; flex-wrap:wrap; align-items:center;}
+  .guide-box{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:13px 20px; border:1px solid rgba(94,234,212,0.45); border-radius:6px;
+    background:rgba(94,234,212,0.16);
+    color:#D9FBF2; text-decoration:none; font-size:0.88rem; font-weight:500;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .guide-box:hover{border-color:var(--bio-cyan); background:rgba(94,234,212,0.26);}
+  .guide-icon{font-size:1.1rem;}
   .fee-block{margin-top:28px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.12);}
   .fee-heading{
     font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.12em;
@@ -840,6 +849,10 @@
       <p>Registration is open to researchers, graduate, undergraduate, and master's students across physics, chemistry, mathematics, biology, engineering, and medical sciences. Registration fee covers accommodation, meals, and workshop kits.</p>
       <div class="reg-actions">
         <a href="https://erp.iitkgp.ac.in/CEP/courses.htm" class="btn btn-primary">Register now</a>
+        <a href="pdf/registration-guide.pdf" target="_blank" rel="noopener" class="guide-box">
+          <span class="guide-icon">📄</span>
+          <span class="guide-text">Step-by-step guide for registration</span>
+        </a>
       </div>
       <div class="fee-block">
         <div class="fee-heading">Registration fees</div>
