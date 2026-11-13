@@ -264,6 +264,13 @@
   .fee-list .fee-amount{font-family:'IBM Plex Mono',monospace; color:#EDEEF3; white-space:nowrap;}
 
   /* ---------- committee ---------- */
+  .patron-block{
+    text-align:center;
+    padding-bottom:28px; margin-bottom:32px; border-bottom:1px solid var(--border);
+  }
+  .patron-block .committee-name{font-size:1.15rem;}
+  .patron-avatar{width:84px; height:84px; margin:0 auto 14px; font-size:1.4rem;}
+  .committee-divider{height:1px; background:var(--border); margin:36px 0;}
   .committee-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:24px;}
   .committee-card{text-align:left;}
   .committee-role{font-size:0.82rem; color:#0F6E56; font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em; margin:2px 0;}
@@ -451,16 +458,6 @@
     </div>
     <div class="speaker-card">
       <div class="speaker-top">
-        <div class="avatar" data-fallback="RD"><img src="images/vishu.jpg" alt="Dr. A. " onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
-        <div>
-          <div class="speaker-name">Prof. Vishwesha Guttal</div>
-          <div class="speaker-affil">IISc Bangalore</div>
-        </div>
-      </div>
-      <span class="field-tag">ECOL</span>
-    </div>
-    <div class="speaker-card">
-      <div class="speaker-top">
         <div class="avatar" data-fallback="RD"><img src="images/shradha.jpg" alt="Dr. A. " onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
         <div>
           <div class="speaker-name">Prof. Shradha Mishra</div>
@@ -641,26 +638,6 @@
     </div>
     <div class="speaker-card">
       <div class="speaker-top">
-        <div class="avatar" data-fallback="RD"><img src="images/rajeshg.jpg" alt="Dr. A. " onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
-        <div>
-          <div class="speaker-name">Prof Rajesh Ganapathy</div>
-          <div class="speaker-affil">JNCASR Bangalore</div>
-        </div>
-      </div>
-      <span class="field-tag">PHYS</span>
-    </div>
-    <div class="speaker-card">
-      <div class="speaker-top">
-        <div class="avatar" data-fallback="RD"><img src="images/pritha.jpg" alt="Dr. A. " onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
-        <div>
-          <div class="speaker-name">Prof Pritha Dolai</div>
-          <div class="speaker-affil">NITK Surathkal</div>
-        </div>
-      </div>
-      <span class="field-tag">PHYS</span>
-    </div>
-    <div class="speaker-card">
-      <div class="speaker-top">
         <div class="avatar" data-fallback="RD"><img src="images/rituparno.jpg" alt="Dr. A. " onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
         <div>
           <div class="speaker-name">Prof. Rituparno Mandal</div>
@@ -715,16 +692,6 @@
         <div>
           <div class="speaker-name">Prof. Nitin Kumar</div>
           <div class="speaker-affil">IIT Bombay</div>
-        </div>
-      </div>
-      <span class="field-tag">PHYS</span>
-    </div>
-    <div class="speaker-card">
-      <div class="speaker-top">
-        <div class="avatar" data-fallback="RD"><img src="images/tapas.jpg" alt="Dr. A. " onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
-        <div>
-          <div class="speaker-name">Dr. Tapas Singha</div>
-          <div class="speaker-affil">Institut Curie, Paris</div>
         </div>
       </div>
       <span class="field-tag">PHYS</span>
@@ -914,21 +881,107 @@
     <span class="section-tag">Organizers</span>
     <h2>Organizing committee</h2>
   </div>
+  <div class="patron-block">
+    <div class="avatar patron-avatar" data-fallback="SC"><img src="images/suman.jpg" alt="Prof. Suman Chakraborty" onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
+    <div class="committee-name">Prof. Suman Chakraborty</div>
+    <div class="committee-role">Patron</div>
+    <div class="committee-affil">Director, IIT Kharagpur</div>
+  </div>
   <div class="committee-grid">
     <div class="committee-card">
-      <div class="committee-name"><a href="https://pintupatra05.wixsite.com/website" target="_blank" rel="noopener">Prof. Pintu Patra</a></div>
-      <div class="committee-role">Convenor</div>
-      <div class="committee-affil">Department of Physics, IIT Kharagpur</div>
+      <div class="speaker-top">
+        <div class="avatar" data-fallback="PP"><img src="images/pintu.jpg" alt="Prof. Pintu Patra" onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
+        <div>
+          <div class="committee-name"><a href="https://pintupatra05.wixsite.com/website" target="_blank" rel="noopener">Prof. Pintu Patra</a></div>
+          <div class="committee-role">Convenor</div>
+          <div class="committee-affil">Department of Physics, IIT Kharagpur</div>
+        </div>
+      </div>
     </div>
     <div class="committee-card">
-      <div class="committee-name"><a href="https://www.rkmanna.com/" target="_blank" rel="noopener">Prof. Raj Kumar Manna</a></div>
-      <div class="committee-role">Convenor</div>
-      <div class="committee-affil">School of Medical Science and Technology, IIT Kharagpur</div>
+      <div class="speaker-top">
+        <div class="avatar" data-fallback="RM"><img src="images/raj.jpg" alt="Prof. Raj Kumar Manna" onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
+        <div>
+          <div class="committee-name"><a href="https://www.rkmanna.com/" target="_blank" rel="noopener">Prof. Raj Kumar Manna</a></div>
+          <div class="committee-role">Convenor</div>
+          <div class="committee-affil">School of Medical Science and Technology, IIT Kharagpur</div>
+        </div>
+      </div>
     </div>
     <div class="committee-card">
-      <div class="committee-name"><a href="https://sites.google.com/view/physicslab-joydipchaudhuri" target="_blank" rel="noopener">Prof. Joydip Chaudhuri</a></div>
-      <div class="committee-role">Secretary</div>
-      <div class="committee-affil">Department of Chemical Engineering, IIT Kharagpur</div>
+      <div class="speaker-top">
+        <div class="avatar" data-fallback="JC"><img src="images/joydip.jpg" alt="Prof. Joydip Chaudhuri" onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
+        <div>
+          <div class="committee-name"><a href="https://sites.google.com/view/physicslab-joydipchaudhuri" target="_blank" rel="noopener">Prof. Joydip Chaudhuri</a></div>
+          <div class="committee-role">Secretary</div>
+          <div class="committee-affil">Department of Chemical Engineering, IIT Kharagpur</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="committee-divider"></div>
+
+  <div class="committee-grid">
+    <div class="committee-card">
+      <div class="speaker-top">
+        <div class="avatar" data-fallback="SD"><img src="images/soumen.jpg" alt="Prof. Soumen Das" onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
+        <div>
+          <div class="committee-name">Prof. Soumen Das</div>
+          <div class="committee-role">Local Advisor</div>
+          <div class="committee-affil">School of Medical Science and Technology, IIT Kharagpur</div>
+        </div>
+      </div>
+    </div>
+    <div class="committee-card">
+      <div class="speaker-top">
+        <div class="avatar" data-fallback="KC"><img src="images/koel.jpg" alt="Prof. Koel Chaudhury" onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
+        <div>
+          <div class="committee-name">Prof. Koel Chaudhury</div>
+          <div class="committee-role">Local Advisor</div>
+          <div class="committee-affil">School of Medical Science and Technology, IIT Kharagpur</div>
+        </div>
+      </div>
+    </div>
+    <div class="committee-card">
+      <div class="speaker-top">
+        <div class="avatar" data-fallback="SM"><img src="images/sonjoy.jpg" alt="Sonjoy Majumder" onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
+        <div>
+          <div class="committee-name">Sonjoy Majumder</div>
+          <div class="committee-role">Local Advisor</div>
+          <div class="committee-affil">Department of Physics, IIT Kharagpur</div>
+        </div>
+      </div>
+    </div>
+    <div class="committee-card">
+      <div class="speaker-top">
+        <div class="avatar" data-fallback="MM"><img src="images/mahitosh.jpg" alt="Prof. Mahitosh Mandal" onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
+        <div>
+          <div class="committee-name">Prof. Mahitosh Mandal</div>
+          <div class="committee-role">Local Advisor</div>
+          <div class="committee-affil">School of Medical Science and Technology, IIT Kharagpur</div>
+        </div>
+      </div>
+    </div>
+    <div class="committee-card">
+      <div class="speaker-top">
+        <div class="avatar" data-fallback="PB"><img src="images/shekar.jpg" alt="Prof. Poornachandra Sekhar Burada" onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
+        <div>
+          <div class="committee-name">Prof. Poornachandra Sekhar Burada</div>
+          <div class="committee-role">Local Advisor</div>
+          <div class="committee-affil">Department of Physics, IIT Kharagpur</div>
+        </div>
+      </div>
+    </div>
+    <div class="committee-card">
+      <div class="speaker-top">
+        <div class="avatar" data-fallback="SB"><img src="images/somnath.jpg" alt="Prof. Somnath Bharadwaj" onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
+        <div>
+          <div class="committee-name">Prof. Somnath Bharadwaj</div>
+          <div class="committee-role">Local Advisor</div>
+          <div class="committee-affil">Department of Physics, IIT Kharagpur</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -937,11 +990,10 @@
   <div class="foot-logo">Collective Dynamics of Living Systems</div>
   <p>A workshop on emergence and self-organization across scales of life.</p>
   <div class="foot-links">
-    <a href="mailto:organizers@example.org">organizers@example.org</a>
-    <a href="#">Twitter / X</a>
-    <a href="#">Mastodon</a>
+    <a href="mailto:pintupatra@phy.iitkgp.ac.in">pintupatra@phy.iitkgp.ac.in</a>
+    <a href="mailto:raj@smst.iitkgp.ac.in">raj@smst.iitkgp.ac.in</a>
   </div>
-  <p style="margin-top:20px; font-size:0.75rem; color:#5B6472;">© 2026 CDLS Workshop. Site content is a placeholder template — edit freely.</p>
+  <p style="margin-top:20px; font-size:0.75rem; color:#5B6472;">© 2026 CDLS Workshop.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/d3-delaunay@6"></script>
