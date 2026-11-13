@@ -272,6 +272,7 @@
   .patron-avatar{width:84px; height:84px; margin:0 auto 14px; font-size:1.4rem;}
   .committee-divider{height:1px; background:var(--border); margin:36px 0;}
   .committee-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:24px;}
+  .advisor-grid{grid-template-columns:repeat(3, 1fr);}
   .committee-card{text-align:left;}
   .committee-role{font-size:0.82rem; color:#0F6E56; font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em; margin:2px 0;}
   .committee-name{font-family:'Fraunces',serif; font-weight:600; font-size:0.98rem;}
@@ -293,6 +294,7 @@
     .about-grid, .venue-grid, .reg-wrap{grid-template-columns:1fr;}
     .theme-grid, .speaker-grid{grid-template-columns:1fr 1fr;}
     .committee-grid{grid-template-columns:1fr 1fr;}
+    .advisor-grid{grid-template-columns:1fr 1fr;}
   }
   @media (max-width:560px){
     .theme-grid, .speaker-grid, .committee-grid{grid-template-columns:1fr;}
@@ -922,7 +924,7 @@
 
   <div class="committee-divider"></div>
 
-  <div class="committee-grid">
+  <div class="committee-grid advisor-grid">
     <div class="committee-card">
       <div class="speaker-top">
         <div class="avatar" data-fallback="SD"><img src="images/soumen.jpg" alt="Prof. Soumen Das" onerror="this.parentElement.textContent=this.parentElement.dataset.fallback"></div>
