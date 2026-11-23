@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Themes — Collective Dynamics of Living Systems 2026</title>
+<meta name="description" content="An interdisciplinary workshop on emergence, self-organization, and collective behavior across scales of life.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav id="nav" class="solid">
+  <a href="index.html" class="nav-logo" style="text-decoration:none;">CDLS · 2026</a>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="themes.html">Themes</a></li>
+    <li><a href="speakers.html">Speakers</a></li>
+    <li><a href="schedule.html">Schedule</a></li>
+    <li><a href="venue.html">Venue</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="participants.html">Participants</a></li>
+    <li><a href="committee.html">Committee</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<section id="themes">
+  <div class="section-head">
+    <span class="section-tag">Scope</span>
+    <h2>Themes &amp; topics</h2>
+    <p>Six threads run through the program, spanning wet-lab biology, field ecology, and theoretical physics.</p>
+  </div>
+  <div class="theme-grid">
+    <div class="theme-card">
+      <span class="theme-tag">PHYS</span>
+      <h3>Active Matter &amp; Biophysics</h3>
+      <p>Self-propelled particles, flocking transitions, and the statistical physics of collective motion.</p>
+    </div>
+    <div class="theme-card">
+      <span class="theme-tag">BIO</span>
+      <h3>Morphogenesis &amp; Tissue Mechanics</h3>
+      <p>How cell collectives build reproducible tissue-scale structure from local signaling rules.</p>
+    </div>
+    <div class="theme-card">
+      <span class="theme-tag">ECO</span>
+      <h3>Social Insects &amp; Colony Behavior</h3>
+      <p>Division of labor, stigmergy, and decision-making in ant, bee, and termite colonies.</p>
+    </div>
+    <div class="theme-card">
+      <span class="theme-tag">NEURO</span>
+      <h3>Neural Population Dynamics</h3>
+      <p>Coordinated activity across neurons as a collective computation problem.</p>
+    </div>
+    <div class="theme-card">
+      <span class="theme-tag">EPI</span>
+      <h3>Collective Dynamics in Diseases</h3>
+      <p>Epidemics, information cascades, and opinion dynamics on networks of interacting agents.</p>
+    </div>
+    <div class="theme-card">
+      <span class="theme-tag">MATH</span>
+      <h3>AI &amp; ML in Living Systems</h3>
+      <p>Data-driven models for inferring interaction rules from collective trajectories.</p>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="foot-logo">Collective Dynamics of Living Systems</div>
+  <p>A workshop on emergence and self-organization across scales of life.</p>
+  <div class="foot-links">
+    <a href="mailto:pintupatra@phy.iitkgp.ac.in">pintupatra@phy.iitkgp.ac.in</a>
+    <a href="mailto:raj@smst.iitkgp.ac.in">raj@smst.iitkgp.ac.in</a>
+  </div>
+  <p style="margin-top:20px; font-size:0.75rem; color:#5B6472;">© 2026 CDLS Workshop.</p>
+</footer>
+
+<script>
+  // nav solid-on-scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) nav.classList.add('solid');
+    else nav.classList.remove('solid');
+  });
+
+  // schedule day tabs
+  document.querySelectorAll('.day-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const day = tab.dataset.day;
+      document.querySelectorAll('.day-tab').forEach(t => t.classList.toggle('active', t === tab));
+      document.querySelectorAll('.schedule-list').forEach(list => {
+        list.classList.toggle('active', list.dataset.day === day);
+      });
+    });
+  });
+</script>
+</body>
+</html>
