@@ -13,7 +13,8 @@
 <body>
 <nav id="nav" class="solid">
   <a href="index.html" class="nav-logo" style="text-decoration:none;">CDLS · 2026</a>
-  <ul class="nav-links">
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  <ul class="nav-links" id="navLinks">
     <li><a href="themes.html">Themes</a></li>
     <li><a href="speakers.html">Speakers</a></li>
     <li><a href="schedule.html">Schedule</a></li>
@@ -80,6 +81,13 @@
     if (window.scrollY > 60) nav.classList.add('solid');
     else nav.classList.remove('solid');
   });
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a =>
+    a.addEventListener('click', () => navLinks.classList.remove('open'))
+  );
 
   // schedule day tabs
   document.querySelectorAll('.day-tab').forEach(tab => {
