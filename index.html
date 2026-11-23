@@ -272,6 +272,18 @@
   .patron-avatar{width:84px; height:84px; margin:0 auto 14px; font-size:1.4rem;}
   .committee-divider{height:1px; background:var(--border); margin:36px 0;}
   .committee-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:24px;}
+  .participants-list{
+    column-count:2; column-gap:48px;
+  }
+  .participant-row{
+    break-inside:avoid; padding:10px 0; border-bottom:1px solid var(--border);
+    margin-bottom:2px;
+  }
+  .participant-name{display:block; font-weight:500; font-size:0.95rem; color:var(--ink);}
+  .participant-affil{display:block; font-size:0.82rem; color:var(--muted); margin-top:2px;}
+  @media (max-width:700px){
+    .participants-list{column-count:1;}
+  }
   .advisor-grid{grid-template-columns:repeat(3, 1fr);}
   .committee-card{text-align:left;}
   .committee-role{font-size:0.82rem; color:#0F6E56; font-family:'IBM Plex Mono',monospace; letter-spacing:0.03em; margin:2px 0;}
@@ -318,6 +330,7 @@
     <li><a href="#schedule">Schedule</a></li>
     <li><a href="#venue">Venue</a></li>
     <li><a href="#register">Register</a></li>
+    <li><a href="#participants">Participants</a></li>
   </ul>
 </nav>
 
@@ -1020,6 +1033,369 @@
       <li><span class="kd-label">Registration closes</span><span class="kd-date">Nov 20, 2026</span></li>
       <li><span class="kd-label">Workshop dates</span><span class="kd-date">Nov 27–29, 2026</span></li>
     </ul>
+  </div>
+</section>
+
+<section id="participants">
+  <div class="section-head">
+    <span class="section-tag">Attendees</span>
+    <h2>Participants</h2>
+    <p>All registered participants for the workshop, listed alphabetically.</p>
+  </div>
+  <div class="participants-list">
+      <div class="participant-row">
+        <span class="participant-name">Abhik Samui</span>
+        <span class="participant-affil">IIT Madras</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Abhishek Chaudhuri</span>
+        <span class="participant-affil">IISER Mohali</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Abhishek Sharma</span>
+        <span class="participant-affil">IIT Mandi</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Agnik Dasgupta</span>
+        <span class="participant-affil">TCG CREST, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Aindrila Deb</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Akanksha Rathore</span>
+        <span class="participant-affil">BITS Pilani Hyderabad</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Akshita Mohanty</span>
+        <span class="participant-affil">KIIT</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Ananya Mandal</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Anil Kumar Dasanna</span>
+        <span class="participant-affil">IISER Mohali</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Anish Chaudhuri</span>
+        <span class="participant-affil">SNBNCBS, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Ankush Semwal</span>
+        <span class="participant-affil">IIT Kharagpur BRH Hall</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Anushree Nath</span>
+        <span class="participant-affil">NIT Rourkela</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Archishman Raju</span>
+        <span class="participant-affil">NCBS</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Arkapriya Bhattacharyya</span>
+        <span class="participant-affil">IIT KHARAGPUR</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Ayandip Roy</span>
+        <span class="participant-affil">SNBNCBS, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Bhanupriya Rout</span>
+        <span class="participant-affil">NIT Rourkela</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Bidhan Mandal</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Bipasha Bhowmick</span>
+        <span class="participant-affil">CSIR-CGCRI, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Brato Chakrabarti</span>
+        <span class="participant-affil">ICTS, Bangalore</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Chitrak Mondal</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Debdita Ghosh</span>
+        <span class="participant-affil">SNBNCBS, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Debojit Sen</span>
+        <span class="participant-affil">SNBNCBS, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Deb Sankar Banerjee</span>
+        <span class="participant-affil">SNBNCBS, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Devadevan M M</span>
+        <span class="participant-affil">ICTS-TIFR, Bengaluru</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Dev Garg</span>
+        <span class="participant-affil">IIT Delhi</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Dhrubajyoti Biswas</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Dipjyoti Das</span>
+        <span class="participant-affil">IISER Kolkata India</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Diptimayee Jena</span>
+        <span class="participant-affil">IIT KGP</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Garima Mishra</span>
+        <span class="participant-affil">Ashoka University, Delhi</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Gautham Dathatreyan</span>
+        <span class="participant-affil">TCG CREST, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Gunjan Bhowmick</span>
+        <span class="participant-affil">IIT</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Harikrishna A P</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Jiarul Midya</span>
+        <span class="participant-affil">IIT Bhubaneswar</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Joydip Chaudhuri</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Kirthica S</span>
+        <span class="participant-affil">NIT Tiruchirapalli</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Koushik Ghosh</span>
+        <span class="participant-affil">NIT Durgapur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Krittika Biswas</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Manas Khan</span>
+        <span class="participant-affil">IIT Kanpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Nandhu Krishna Babu</span>
+        <span class="participant-affil">NCBS, Bangalore</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Naveen Kumar D</span>
+        <span class="participant-affil">ICTS-TIFR</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Nitin Kumar</span>
+        <span class="participant-affil">IIT Bombay</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Pabitra Masanta</span>
+        <span class="participant-affil">IIT Bombay</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Payal Panda</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Pinaki Nayak</span>
+        <span class="participant-affil">IACS, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Poulami Bag</span>
+        <span class="participant-affil">Presidency University, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Prasanta Kumar Biswas</span>
+        <span class="participant-affil">IACS, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Punyabrata Pradhan</span>
+        <span class="participant-affil">SNBNCBS, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Pushpita Ghosh</span>
+        <span class="participant-affil">IISER Thiruvananthapuram</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Rahul Sinha</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Raja Paul</span>
+        <span class="participant-affil">IACS, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Rajesh Singh</span>
+        <span class="participant-affil">IIT Madras</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Rajib Mahato</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Raj kumar Manna</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Ramisetti Lalitha</span>
+        <span class="participant-affil">IIT Kharaghpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Ramray Bhat</span>
+        <span class="participant-affil">IISc Bangalore</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Rituparno Mandal</span>
+        <span class="participant-affil">Raman Research Institute</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Rukmani R</span>
+        <span class="participant-affil">ICTS, Bangalore</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Rumi De</span>
+        <span class="participant-affil">IISER Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Rupayan Rakshit</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Sakuntala Chatterjee</span>
+        <span class="participant-affil">SNBNCBS, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Sandeep Choubey</span>
+        <span class="participant-affil">IMSc Chennai</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Sania Ghosh Dastidar</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Saroj Kumar Nandi</span>
+        <span class="participant-affil">TIFR Hyderabad</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Sashikanta Barik</span>
+        <span class="participant-affil">NIT Durgapur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Saurav Bonik</span>
+        <span class="participant-affil">IIT Delhi</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Sharmistha Pal</span>
+        <span class="participant-affil">TCG CREST Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Shatakshi Bhattacherjee</span>
+        <span class="participant-affil">IIT Delhi</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Shiba Biswas</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Shradha Mishra</span>
+        <span class="participant-affil">IIT BHU Varanasi</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Shreejit Saha</span>
+        <span class="participant-affil">TIFR Hyderabad</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Sivasurender Chandran</span>
+        <span class="participant-affil">IIT Kanpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Sohini Mukherjee</span>
+        <span class="participant-affil">KIIT, Bhubaneswar</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Soumyadeep Kundu</span>
+        <span class="participant-affil">IIT Bombay</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Soumyadiksha Halder</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Soumyajit Biswas</span>
+        <span class="participant-affil">IISER Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Soumya Ranjan Mohapatra</span>
+        <span class="participant-affil">KIIT, Bhubaneswar</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Sribarna Haldar</span>
+        <span class="participant-affil">NITK</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Sumantra Sarkar</span>
+        <span class="participant-affil">IISc Bangalore</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Sumesh Thampi</span>
+        <span class="participant-affil">IITM</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Sunil Kumar P B</span>
+        <span class="participant-affil">IIT Madras</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Surajit Maji</span>
+        <span class="participant-affil">CSIR-CGCRI, Kolkata</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Surya Narayan Sahoo</span>
+        <span class="participant-affil">IIT Bhubaneswar</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Sutapa Roy</span>
+        <span class="participant-affil">BITS Pilani</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Tamal Das</span>
+        <span class="participant-affil">TIFR Hyderabad</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Tapomoy Bhattacharjee</span>
+        <span class="participant-affil">NCBS</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Trupti Rani Dash</span>
+        <span class="participant-affil">Ravenshaw University Cuttack</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Trupti Tanaya Sahoo</span>
+        <span class="participant-affil">IIT Kharagpur</span>
+      </div>
+      <div class="participant-row">
+        <span class="participant-name">Turni Biswas</span>
+        <span class="participant-affil">IISER KOLKATA</span>
+      </div>
+
   </div>
 </section>
 
