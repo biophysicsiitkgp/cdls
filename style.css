@@ -199,6 +199,19 @@
   .day-tab.active{background:var(--ink); color:var(--paper); border-color:var(--ink);}
   .schedule-list{display:none; flex-direction:column; gap:0;}
   .schedule-list.active{display:flex;}
+  .session-head{
+    display:flex; flex-direction:column; gap:4px;
+    margin:32px 0 12px; padding-top:20px; border-top:1px dashed var(--border);
+  }
+  .session-head:first-child{margin-top:0; padding-top:0; border-top:none;}
+  .session-name{
+    font-family:'IBM Plex Mono',monospace; font-size:0.78rem; letter-spacing:0.12em;
+    text-transform:uppercase; color:#0F6E56; font-weight:600;
+  }
+  .session-chair{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--muted);
+  }
+  .session-chair:empty{display:none;}
   .sched-row{
     display:grid; grid-template-columns:110px 1fr auto; gap:18px; align-items:baseline;
     padding:16px 0; border-bottom:1px solid var(--border);
