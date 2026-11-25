@@ -209,7 +209,7 @@
     text-transform:uppercase; color:#0F6E56; font-weight:600;
   }
   .session-chair{
-    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; color:var(--muted);
+    font-family:'Fraunces',serif; font-size:0.9rem; color:var(--muted); font-weight:600;
   }
   .session-chair:empty{display:none;}
   .sched-row{
